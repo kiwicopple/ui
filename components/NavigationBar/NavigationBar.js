@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Device } from "@shoutem/ui/helpers/device-selector.js";
 import React, { Component } from 'react';
 import {
   StatusBar,
@@ -30,7 +31,7 @@ function setStatusBarStyle(backgroundColor) {
   }
 
   function setStyle(bgColor) {
-    const { statusBarColor } = this.props;
+    const { statusBarColor } = this.props ? this.props : { statusBarColor: bgColor };
 
     const color = statusBarColor || bgColor;
 
