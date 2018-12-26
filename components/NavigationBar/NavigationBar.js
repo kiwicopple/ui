@@ -36,7 +36,7 @@ function setStatusBarStyle(backgroundColor) {
     const color = statusBarColor || bgColor;
 
     if (Platform.OS === 'android') {
-      StatusBar.setBackgroundColor('rgba(0, 0, 0, 0.2)');
+      StatusBar.setBarStyle('#000000');
     } else {
       const barStyle = chooseBarStyle(color);
       StatusBar.setBarStyle(barStyle);
@@ -77,7 +77,7 @@ class NavigationBar extends Component {
     const { style } = this.props;
 
     return Device.select({
-      iPhoneX: (<View style={style.statusBar} />),
+      // iPhoneX: (<View style={style.statusBar} />),
       default: null,
     });
   }
